@@ -1,12 +1,17 @@
 # RabbitMQ Tutorials with TypeScript
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![RabbitMQ Logo](https://img.shields.io/badge/RabbitMQ-%23636363?logo=rabbitmq)](https://www.rabbitmq.com/)
+[![Node.js Logo](https://img.shields.io/badge/Node.js-%235FA04E?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![TypeScript Logo](https://img.shields.io/badge/TypeScript-%233178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
 This project is a hands-on exploration of RabbitMQ using TypeScript. It follows the JavaScript tutorials provided by RabbitMQ's official documentation to demonstrate basic messaging patterns and concepts.
 
 ## Project Structure
 
 The project is organized into two main applications under the `apps` directory:
 
-- **queues**: Contains implementations for RabbitMQ messaging using queues.
+- [**queues**](apps/queues): Contains implementations for RabbitMQ messaging using queues.
 - **streams**: Placeholder for potential future implementations using RabbitMQ streams.
 
 Each tutorial or concept is structured in its own directory under `queues/src`, following a modular approach for easy understanding and experimentation.
@@ -25,7 +30,7 @@ To get started with this project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/GuilhermeCAz/ts-rabbitmq-tutorials
    cd ts-rabbitmq-tutorials
    ```
 
