@@ -35,7 +35,7 @@ To get started with this project, follow these steps:
    npm install
    ```
 
-## Running the Tutorials
+### Running the Tutorials
 
 Each tutorial is in a separate folder under the `queues/src` or `streams/src` directory. To run a tutorial, simply follow the instructions in the `INSTRUCTIONS.md` file of the tutorial.
 
