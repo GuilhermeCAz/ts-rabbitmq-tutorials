@@ -2,7 +2,6 @@ import * as amqp from 'amqplib';
 
 async function connectAndSend() {
   const connection = await amqp.connect('amqp://localhost'),
-    // eslint-disable-next-line sort-vars
     channel = await connection.createChannel(),
     msg = 'Hello world!',
     queue = 'hello',
@@ -12,15 +11,13 @@ async function connectAndSend() {
 
   channel.sendToQueue(queue, Buffer.from(msg));
 
-  console.log(' [x] Sent %s', msg);
+  console.log(` [x] Sent ${msg}`);
 
   setTimeout(() => {
     connection.close().catch((err: unknown) => {
-      console.log(err);
+      console.error(err);
     });
   }, timeout);
 }
 
-connectAndSend().catch((err: unknown) => {
-  console.log(err);
-});
+await connectAndSend();

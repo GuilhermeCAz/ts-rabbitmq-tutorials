@@ -1,8 +1,7 @@
 import * as amqp from 'amqplib';
 
-async function receive() {
+async function connectAndReceive() {
   const connection = await amqp.connect('amqp://localhost'),
-    // eslint-disable-next-line sort-vars
     channel = await connection.createChannel(),
     queue = 'hello';
 
@@ -10,24 +9,13 @@ async function receive() {
 
   console.log(` [*] Waiting for messages in ${queue}. To exit press CTRL+C`);
 
-  await new Promise<void>((resolve) => {
-    channel
-      .consume(
-        queue,
-        (msg) => {
-          if (msg) {
-            console.log(` [x] Received ${msg.content.toString()}`);
-            resolve();
-          }
-        },
-        { noAck: true },
-      )
-      .catch((err: unknown) => {
-        console.log(err);
-      });
-  });
+  await channel.consume(
+    queue,
+    (msg) => {
+      if (msg) console.log(` [x] Received ${msg.content.toString()}`);
+    },
+    { noAck: true },
+  );
 }
 
-receive().catch((err: unknown) => {
-  console.log(err);
-});
+await connectAndReceive();
