@@ -1,5 +1,5 @@
 {
-  "name": "mq",
+  "name": "ts-rabbitmq-tutorials",
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,9 +9,10 @@
   "author": "GuilhermeCAz",
   "license": "MIT",
   "description": "",
+  "type": "module",
   "dependencies": {
     "amqplib": "^0.10.4",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
     "typescript": "^5.5.3"
   },
   "devDependencies": {

@@ -8,12 +8,12 @@ Terminal 1 (receiver):
 
 ```bash
 cd apps/queues/src/00-hello-world
-npx ts-node receive.ts
+npx tsx receive.ts
 ```
 
 Terminal 2 (sender):
 
 ```bash
 cd apps/queues/src/00-hello-world
-npx ts-node send.ts
+npx tsx send.ts
 ```
