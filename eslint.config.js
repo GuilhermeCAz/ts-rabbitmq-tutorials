@@ -1,19 +1,20 @@
 import eslint from '@eslint/js';
 import prettier from 'eslint-plugin-prettier';
-import tseslint from 'typescript-eslint';
+import tsEslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default tsEslint.config(
   // JavaScript configurations
   eslint.configs.all,
 
   // TypeScript configurations
-  ...tseslint.configs.strictTypeChecked,
-  ...tseslint.configs.stylisticTypeChecked,
+  ...tsEslint.configs.strictTypeChecked,
+  ...tsEslint.configs.stylisticTypeChecked,
 
+  { ignores: ['eslint.config.js'] },
   {
     files: ['**/*.ts'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser: tsEslint.parser,
       parserOptions: {
         project: true,
         tsconfigRootDir: import.meta.dirname,
@@ -26,6 +27,8 @@ export default tseslint.config(
       curly: ['error', 'multi-or-nest'],
       'func-style': ['error', 'declaration'],
       'no-console': 'off',
+      'no-magic-numbers': ['error', { ignore: [0, 1] }],
+      'sort-vars': 'off',
     },
   },
 );
